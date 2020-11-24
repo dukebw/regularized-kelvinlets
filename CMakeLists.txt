@@ -8,8 +8,9 @@ option(LIBIGL_WITH_OPENGL            "Use OpenGL"         ON)
 option(LIBIGL_WITH_OPENGL_GLFW       "Use GLFW"           ON)
 
 find_package(LIBIGL REQUIRED QUIET)
+find_package(ascent REQUIRED)
 
 # Add your project files
 file(GLOB SRCFILES *.cpp)
 add_executable(${PROJECT_NAME} ${SRCFILES})
-target_link_libraries(${PROJECT_NAME} igl::core igl::opengl_glfw)
+target_link_libraries(${PROJECT_NAME} igl::core igl::opengl_glfw ascent::ascent)
